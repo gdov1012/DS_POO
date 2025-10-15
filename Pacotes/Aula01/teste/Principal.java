@@ -8,35 +8,64 @@ import br.edu.etec.projeto.model.Aluno;
 import br.edu.etec.projeto.model.Pessoa;
 import br.edu.etec.projeto.model.Professor;
 import br.edu.etec.projeto.model.Funcionario;
+import javax.swing.JOptionPane;
 
 
 public class Principal {
     public static void main(String[] args) {
         
-        Aluno a1 = new Aluno("123","Segundo DS","Lucas","123.456.789-10","14526398-8");
+            String nomeA = JOptionPane.showInputDialog("Digite o nome do aluno:");
+            String CPFA = JOptionPane.showInputDialog("Digite o CPF do aluno:");
+            String RGA = JOptionPane.showInputDialog("Digite o RG do aluno:");
+            String RGM = JOptionPane.showInputDialog("Digite o RGM do aluno:");
+            String turma = JOptionPane.showInputDialog("Digite a Turma do aluno:");
+            
+             Aluno a1 = new Aluno(RGM, turma, nomeA, CPFA, RGA);
+             
+          JOptionPane.showMessageDialog(null,
+                "Nome: " + a1.getNome() + "\n" +
+                "CPF: " + a1.getCPF() + "\n" +
+                "RG: " + a1.getRG()+ "\n" +
+                "RA: " + a1.getRGM()  + "\n" +
+                "turma: " +a1.getTurma() );
+ 
+   
         
-        System.out.println("Nome: " +a1.getNome());
-        System.out.println("CPF: " +a1.getCPF());
-        System.out.println("RG: " +a1.getRG());
-        a1.ExibirDados();
-        System.out.println("\n");
-        
-        
-        Professor p1 = new Professor("PAM","14523685","Professor","Salomao","789.965.987-52","45896321-5");
-                
-        System.out.println("Nome: " +p1.getNome());
-        System.out.println("CPF: " +p1.getCPF());
-        System.out.println("RG: " +p1.getRG());
-        p1.ExibirDados();
-        System.out.println("\n");
+            String nomeP = JOptionPane.showInputDialog("Digite o nome do Professor:");
+            String CPFP = JOptionPane.showInputDialog("Digite o CPF do Professor:");
+            String RGP = JOptionPane.showInputDialog("Digite o RG do Professor:");
+            String disciplina = JOptionPane.showInputDialog("Digite o disciplina do Professor:");
+            String RFP = JOptionPane.showInputDialog("Digite a RF do Professor:");
+            String cargoP = JOptionPane.showInputDialog("Digite o cargo:");
+            
+             Professor p1 = new Professor(RFP,cargoP,disciplina, nomeP, CPFP, RGP);
+             
+          JOptionPane.showMessageDialog(null,
+                "Nome: " + p1.getNome() + "\n" +
+                "CPF: " + p1.getCPF() + "\n" +
+                "RG: " + p1.getRG()+ "\n" +
+                "RF: " + p1.getRF()  + "\n" +
+                "cargo: " +p1.getCargo() );
+ 
+          
+          
+            String nomeF = JOptionPane.showInputDialog("Digite o nome do Professor:");
+            String CPFF = JOptionPane.showInputDialog("Digite o CPF do Professor:");
+            String RGF = JOptionPane.showInputDialog("Digite o RG do Professor:");
+            String RF = JOptionPane.showInputDialog("Digite a RF do Professor:");
+            String cargo = JOptionPane.showInputDialog("Digite o cargo:");
+            
+             Funcionario f1 = new Funcionario(RF,cargo, nomeF, CPFF, RGF);
+             
+          JOptionPane.showMessageDialog(null,
+                "Nome: " + p1.getNome() + "\n" +
+                "CPF: " + p1.getCPF() + "\n" +
+                "RG: " + p1.getRG()+ "\n" +
+                "RF: " + p1.getRF()  + "\n" +
+                "cargo: " +p1.getCargo() );
+   
     
-        Funcionario f1 = new Funcionario("258","Auxiliar de Limpesza","Juca","569.689.745-98","554858554-5");
-       
-        System.out.println("Nome: " +f1.getNome());
-        System.out.println("CPF: " +f1.getCPF());
-        System.out.println("RG: " +f1.getRG());
-        f1.ExibirDados();
-        System.out.println("\n");
+    
 
 }
 }
